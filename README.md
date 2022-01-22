@@ -6,7 +6,7 @@ Currently does not support DAA(Decimal Adjust Accumulator) instructions.
 This repo doesn't include any machine layers.
 
 ### Testing
-code was tested using the cpudiag progam under test/
+code was tested using the cpudiag progam found in the test folder.
 
 Note: the test code uses a machine specific thing to start the program at byte 0x100.
 To deal with this you can use something like the following to make it work(or edit hex manually)
