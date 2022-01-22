@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 #ifndef C8080_INCLUDE_GAURD
-#define C8080_IINCLUD_GAURD
+#define C8080_INCLUDE_GAURD
 
 #include <stdint.h>
 
