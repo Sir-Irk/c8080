@@ -6,10 +6,7 @@ Currently does not support DAA(Decimal Adjust Accumulator) instructions.
 This repo doesn't include any machine layers.
 
 ### Testing
-code was tested using the following cpu diagnostic program made for the 8080
-
-- Source code : http://www.emulator101.com/files/cpudiag.asm
-- Compiled program : http://www.emulator101.com/files/cpudiag.bin
+code was tested using the cpudiag progam under test/
 
 Note: the test code uses a machine specific thing to start the program at byte 0x100.
 To deal with this you can use something like the following to make it work(or edit hex manually)
