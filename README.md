@@ -12,7 +12,7 @@ Planned features:
 ### Testing
 The code was tested using the cpudiag progam found in the test folder.
 
-Note: the test code uses a machine specific instruction(ORG 100H) to start the program at byte 0x100.
+Note: the test code uses a machine specific instruction(ORG 00100H) to start the program at byte 0x100.
 To deal with this you can use something like the following to make it work(or edit hex manually)
 
 ```C
