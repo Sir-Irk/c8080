@@ -1,5 +1,4 @@
 #include "emulator.h"
-#include "types.h"
 #include <assert.h>
 #include <stddef.h>
 #include <stdio.h>
