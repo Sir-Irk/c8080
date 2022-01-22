@@ -1,4 +1,4 @@
-#include "emulator.h"
+#include "c8080.h"
 #include <assert.h>
 #include <stddef.h>
 #include <stdio.h>
