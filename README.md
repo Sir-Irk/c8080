@@ -10,13 +10,13 @@ Planned features:
 - Cycle stepping instead of instruction stepping for better compatibility with other hardware emulation.
 
 ### Testing
-code was tested using the cpudiag progam found in the test folder.
+The code was tested using the cpudiag progam found in the test folder.
 
 Note: the test code uses a machine specific thing to start the program at byte 0x100.
 To deal with this you can use something like the following to make it work(or edit hex manually)
 
 ```C
-    //...load the entire program with a 0x100 byte offset
+    //...load the entire program with an 0x100 byte offset
 
     //Fix the first instruction to be JMP 0x100    
     cpu->m[0]=0xc3;    
