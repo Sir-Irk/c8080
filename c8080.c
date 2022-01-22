@@ -558,7 +558,7 @@ emulate_8080(struct cpu_8080 *cpu)
 
         //case 0xcd: /* CALL */ call_hl(state, oc[1], oc[2]); break;
         case 0xcd: /* CALL */ {
-            #if 0
+            #if 1 //NOTE: this is specific to the cpu-diag program
             if(((oc[2] << 8) | oc[1]) == 5) {
                 if(state->c == 9) {
                     uint16_t offset = (state->d << 8) | (state->e);    
