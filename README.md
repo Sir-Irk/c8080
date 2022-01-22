@@ -8,8 +8,8 @@ This repo doesn't include any machine layers.
 ### Testing
 code was tested using the following cpu diagnostic program made for the 8080
 
-- http://www.emulator101.com/files/cpudiag.asm - source code
-- http://www.emulator101.com/files/cpudiag.bin - compiled program
+- Source code : http://www.emulator101.com/files/cpudiag.asm
+- Compiled program : http://www.emulator101.com/files/cpudiag.bin
 
 Note: the test code uses a machine specific thing to start the program at byte 0x100.
 To deal with this you can use something like the following to make it work(or edit hex manually)
