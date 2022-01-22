@@ -30,3 +30,5 @@ To deal with this you can use something like the following to make it work(or ed
     state->memory[0x59d] = 0xc2;    
     state->memory[0x59e] = 0x05;    
 ```
+
+There is also a specific instruction(0xcd) in the emulator for handling the printing for the diagnostic program.
