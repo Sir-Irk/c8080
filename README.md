@@ -1,6 +1,8 @@
 # c8080
 Bare 8080 cpu emulator. Based on this guide http://www.emulator101.com/welcome.html
 
+Currently does not support DAA(Decimal Adjust Accumulator) instructions.
+
 This repo doesn't include any machine layers.
 
 ### Testing
