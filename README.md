@@ -5,6 +5,10 @@ Currently does not support DAA(Decimal Adjust Accumulator) instructions.
 
 This repo doesn't include any machine layers.
 
+Planned features:
+- DAA support
+- Cycle stepping instead of instruction stepping for better compatibility with other hardware emulation.
+
 ### Testing
 code was tested using the cpudiag progam found in the test folder.
 
