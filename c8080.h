@@ -37,9 +37,3 @@ typedef struct cpu_8080 {
     condition_codes cc;
     u8 interruptEnabled;
 } cpu_8080;
-
-typedef struct machine_8080 {
-    u8 shift[2];
-    u8 shiftOffset;
-    u8 ports[8];
-} machine_8080;
