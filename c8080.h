@@ -1,3 +1,5 @@
+#ifndef C8080_INCLUDE_GAURD
+#define C8080_IINCLUD_GAURD
 /*
 MIT License
 
@@ -60,3 +62,4 @@ typedef struct cpu_8080 {
     condition_codes cc;
     u8 interruptEnabled;
 } cpu_8080;
+#endif //C8080_INCLUDE_GAURD
