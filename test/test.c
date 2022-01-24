@@ -30,7 +30,10 @@ read_entire_file(const char *filepath)
     size = ftell(f) + 1;
     fseek(f, 0, SEEK_SET); // rewind
     void *contents = malloc(size);
-    assert(contents);
+    if(!contents) {
+        fclose(f);
+        return;
+    }
     fread(contents, 1, size - 1, f);
     fclose(f);
     ((char *)contents)[size - 1] = '\0';
