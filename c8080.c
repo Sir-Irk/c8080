@@ -269,8 +269,6 @@ emulate_8080(struct cpu_8080 *cpu)
         } break;
         case 0x12: { //STAX D
             cpu->m[hl_u8(cpu->d, cpu->e)] = cpu->a;
-            u16 addr = (cpu->d << 8) | cpu->e;
-            cpu->m[addr] = cpu->a;
         } break;
         case 0x32: { //STA addr 
             cpu->m[hl_u8(oc[2], oc[1])] = cpu->a;
