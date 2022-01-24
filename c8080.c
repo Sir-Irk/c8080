@@ -406,7 +406,7 @@ emulate_8080(struct cpu_8080 *cpu)
         case 0x39: { // DAD SP 
             u16 hl = ((u16)cpu->h << 8) | (u16)cpu->l;
             u32 result = hl + cpu->sp;
-            cpu->cc.cy = (result > 0xff);
+            cpu->cc.cy = (result > 0xffff);
             cpu->h = (result & 0xffff) >> 8;
             cpu->l = result & 0xff;
         } break;
