@@ -18,8 +18,9 @@ or `gcc test.c -DCPUDIAG=1`
 
 When you run it you should see `CPU IS OPERATIONAL`
 
+
 Note: the test code uses a machine specific instruction `ORG 00100H` to start the program at byte 0x100.
-To deal with this you can use something like the following to make it work(or edit hex manually)
+To deal with this test.c does the following to make it work
 
 ```C
     //...load the entire program with an 0x100 byte offset
