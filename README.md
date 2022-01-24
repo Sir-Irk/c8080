@@ -20,7 +20,7 @@ When you run it you should see `CPU IS OPERATIONAL`
 
 
 Note: the test code uses a machine specific instruction `ORG 00100H` to start the program at byte 0x100.
-To deal with this test.c does the following to make it work
+To deal with this [test.c](https://github.com/Sir-Irk/c8080/blob/0cbd205301fd606fe131324bba900488418b0bbf/test/test.c#L55) does the following to make it work
 
 ```C
     //...load the entire program with an 0x100 byte offset
