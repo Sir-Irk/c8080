@@ -582,21 +582,21 @@ emulate_8080(struct cpu_8080 *cpu)
         case 0xcd: /* CALL */ { 
 #if 0 //NOTE: this is specific to the cpu-diag program
             if(((oc[2] << 8) | oc[1]) == 5) {
-                if(state->c == 9) {
-                    uint16_t offset = (state->d << 8) | (state->e);    
-                    char *str = &state->m[offset+3];  //skip the prefix bytes    
+                if(cpu->c == 9) {
+                    uint16_t offset = (cpu->d << 8) | (cpu->e);    
+                    char *str = &cpu->m[offset+3];  //skip the prefix bytes    
                     while (*str != '$') {
                         printf("%c", *str++);    
                     }
                     printf("\n");    
                     assert(false);
-                } else if (state->c == 2) {    
+                } else if (cpu->c == 2) {    
                     printf ("print char routine called\n");    
                 }  
             } else if (((oc[2] << 8) | oc[1]) == 0) {
                 assert(false);
             } else {
-                call_hl(state, oc[1], oc[2]); break;
+                call_hl(cpu, oc[1], oc[2]); break;
             }    
 #else
             call_hl(cpu, oc[1], oc[2]); 
