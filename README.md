@@ -14,6 +14,7 @@ The code was tested using the cpudiag progam found in the test folder.
 
 Compile test.c with:
 `clang test.c -DCPUDIAG=1` 
+or `gcc test.c -DCPUDIAG-1`
 
 When you run it you should see `CPU IS OPERATIONAL`
 
