@@ -594,7 +594,7 @@ emulate_8080(struct cpu_8080 *cpu)
                     printf ("print char routine called\n");    
                 }  
             } else if (((oc[2] << 8) | oc[1]) == 0) {
-                assert(false);
+                return 0;
             } else {
                 call_hl(cpu, oc[1], oc[2]); break;
             }    
