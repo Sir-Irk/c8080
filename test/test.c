@@ -48,7 +48,6 @@ int main(void)
 
     struct cpu_8080 cpu = {};
     u16 stackSize = 5000;
-    u16 stackStart = program.contentsSize + stackSize;
 
     cpu.m = malloc(program.contentsSize + stackSize + 0x100);
     memcpy(cpu.m + 0x100, program.contents, program.contentsSize);
