@@ -32,7 +32,7 @@ read_entire_file(const char *filepath)
     void *contents = malloc(size);
     if(!contents) {
         fclose(f);
-        return;
+        return result;
     }
     fread(contents, 1, size - 1, f);
     fclose(f);
