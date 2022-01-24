@@ -10,10 +10,17 @@ Planned features:
 - Cycle stepping instead of instruction stepping for better compatibility with other hardware emulation.
 
 ### Testing
-The code was tested using the cpudiag progam found in the test folder.
+The code was tested using the cpudiag progam found in the test folder. 
+
+Compile test.c with:
+`clang test.c -DCPUDIAG=1` 
+or `gcc test.c -DCPUDIAG=1`
+
+When you run it you should see `CPU IS OPERATIONAL`
+
 
 Note: the test code uses a machine specific instruction `ORG 00100H` to start the program at byte 0x100.
-To deal with this you can use something like the following to make it work(or edit hex manually)
+To deal with this test.c does the following to make it work
 
 ```C
     //...load the entire program with an 0x100 byte offset
