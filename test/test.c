@@ -52,8 +52,6 @@ int main(void)
     cpu.m = malloc(program.contentsSize + stackSize + 0x100);
     memcpy(cpu.m + 0x100, program.contents, program.contentsSize);
 
-    cpu.pc = 0x100;
-
     // Fix the first instruction to be JMP 0x100
     cpu.m[0] = 0xc3;
     cpu.m[1] = 0x65;
