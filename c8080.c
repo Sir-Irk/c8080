@@ -27,6 +27,7 @@ SOFTWARE.
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define si_swap(a, b, type) \
     do {                    \
@@ -580,7 +581,7 @@ emulate_8080(struct cpu_8080 *cpu)
         case 0xf8: /* RM  */ if(cpu->cc.s  == 1) ret(cpu); break;
             
         case 0xcd: /* CALL */ { 
-#if 0 //NOTE: this is specific to the cpu-diag program
+#if 1 //NOTE: this is specific to the cpu-diag program
             if(((oc[2] << 8) | oc[1]) == 5) {
                 if(cpu->c == 9) {
                     uint16_t offset = (cpu->d << 8) | (cpu->e);    
