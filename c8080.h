@@ -63,4 +63,8 @@ typedef struct cpu_8080 {
     condition_codes cc;
     u8 interruptEnabled;
 } cpu_8080;
+
+//Returns 0 when exit is called. Returns 1 otherwise
+int emulate_8080(struct cpu_8080 *cpu);
+
 #endif //C8080_INCLUDE_GAURD

@@ -241,7 +241,8 @@ generate_interrupt(struct cpu_8080 *cpu, i32 interruptNum)
     cpu->pc = 8 * interruptNum; // RST [interrupt number]
 }
 
-internal void
+
+int //Returns 0 when exit is called. Returns 1 otherwise
 emulate_8080(struct cpu_8080 *cpu)
 {
     u8 *oc = &cpu->m[cpu->pc];
@@ -581,16 +582,16 @@ emulate_8080(struct cpu_8080 *cpu)
         case 0xf8: /* RM  */ if(cpu->cc.s  == 1) ret(cpu); break;
             
         case 0xcd: /* CALL */ { 
-#if 1 //NOTE: this is specific to the cpu-diag program
+#if CPUDIAG //NOTE: this is specific to the cpu-diag program
             if(((oc[2] << 8) | oc[1]) == 5) {
                 if(cpu->c == 9) {
                     uint16_t offset = (cpu->d << 8) | (cpu->e);    
-                    char *str = &cpu->m[offset+3];  //skip the prefix bytes    
+                    u8 *str = &cpu->m[offset+3];  //skip the prefix bytes    
                     while (*str != '$') {
                         printf("%c", *str++);    
                     }
                     printf("\n");    
-                    assert(false);
+                    return 0;
                 } else if (cpu->c == 2) {    
                     printf ("print char routine called\n");    
                 }  
@@ -642,7 +643,7 @@ emulate_8080(struct cpu_8080 *cpu)
         case 0xf3: /* DI  */ cpu->interruptEnabled = 0; break;
         case 0xfb: /* EI  */ cpu->interruptEnabled = 1; break;
 
-        case 0x76: exit(1); break; //HLT(special)
+        case 0x76: return 0; //HLT(special)
 
         default: {
             unimplemented_instruction(cpu, oc[0]);
@@ -650,5 +651,7 @@ emulate_8080(struct cpu_8080 *cpu)
         } break;
     }
     cpu->pc += 1;
+
+    return 1;
     // clang-format on
 }
