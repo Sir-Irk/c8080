@@ -22,8 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#ifndef C8080_INCLUDE_GAURD
-#define C8080_INCLUDE_GAURD
+#ifndef C8080_INCLUDE_GUARD
+#define C8080_INCLUDE_GUARD
 
 #include <stdint.h>
 
@@ -67,4 +67,4 @@ typedef struct cpu_8080 {
 //Returns 0 when exit is called. Returns 1 otherwise
 int emulate_8080(struct cpu_8080 *cpu);
 
-#endif //C8080_INCLUDE_GAURD
+#endif //C8080_INCLUDE_GUARD
